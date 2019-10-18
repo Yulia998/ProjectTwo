@@ -1,6 +1,6 @@
 package netcracker.hobbies;
 
-public class Hobby {
+public abstract class Hobby {
     private String name;
     private int amountAwards;
     private float hoursInWeek;
@@ -109,7 +109,7 @@ public class Hobby {
 
     @Override
     public String toString() {
-        return "Hobby{" +
+        return "Hobby: " +
                 "name='" + name + '\'' +
                 ", amountAwards=" + amountAwards +
                 ", hoursInWeek=" + hoursInWeek +
@@ -118,7 +118,8 @@ public class Hobby {
                 ", fromAge=" + fromAge +
                 ", field3=" + field3 +
                 ", field4=" + field4 +
-                ", relatedWork=" + relatedWork +
-                '}';
+                ", relatedWork=" + relatedWork;
     }
+
+    public abstract void tellAboutHobby();
 }
