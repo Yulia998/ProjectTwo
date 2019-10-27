@@ -1,5 +1,7 @@
 package netcracker.hobbies;
 
+import netcracker.exceptions.HobbyException;
+
 public class Swimming extends Hobby {
     private float maxMeters;
 
@@ -16,7 +18,10 @@ public class Swimming extends Hobby {
         this.maxMeters = maxMeters;
     }
 
-    public void tellAboutHobby() {
+    public void tellAboutHobby() throws HobbyException {
+        if (maxMeters < 0) {
+            throw new HobbyException("Wrong value of maxMeters");
+        }
         System.out.println("Swimming{" +
                 "name='" + super.getName() + '\'' +
                 ", hoursInWeek=" + super.getHoursInWeek() +

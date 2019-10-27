@@ -1,5 +1,7 @@
 package netcracker.hobbies;
 
+import netcracker.exceptions.HobbyException;
+
 public abstract class Hobby {
     private String name;
     private int amountAwards;
@@ -121,5 +123,5 @@ public abstract class Hobby {
                 ", relatedWork=" + relatedWork;
     }
 
-    public abstract void tellAboutHobby();
+    public abstract void tellAboutHobby() throws HobbyException;
 }
