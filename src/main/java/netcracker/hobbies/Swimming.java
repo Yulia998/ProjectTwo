@@ -10,6 +10,12 @@ public class Swimming extends Hobby {
         this.maxMeters = maxMeters;
     }
 
+    public Swimming(String name, float hoursInWeek, float maxMeters) {
+        super.setName(name);
+        super.setHoursInWeek(hoursInWeek);
+        this.maxMeters = maxMeters;
+    }
+
     public float getMaxMeters() {
         return maxMeters;
     }
@@ -29,5 +35,14 @@ public class Swimming extends Hobby {
                 ", relatedWork=" + super.isRelatedWork() +
                 ", maxMeters=" + maxMeters +
                 '}');
+    }
+
+    @Override
+    public String toString() {
+        return "Swimming{" +
+                "name=" + super.getName() +
+                "; hoursInWeek=" + String.format("%.1f", super.getHoursInWeek()).replace(',', '.') +
+                "; maxMeters=" + String.format("%.1f", maxMeters).replace(',', '.') +
+                '}';
     }
 }

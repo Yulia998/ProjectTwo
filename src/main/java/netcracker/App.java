@@ -1,18 +1,35 @@
 package netcracker;
 
-import netcracker.exceptions.HobbyException;
-import netcracker.hobbies.*;
-import org.apache.log4j.Logger;
+import netcracker.menu.HobbyMenu;
 
 public class App {
-    final static Logger logger = Logger.getLogger(App.class);
-
     public static void main(String[] args) {
-        try {
-            Swimming swim = new Swimming("брасс", 6f, (byte) 11, true, -40f);
-            swim.tellAboutHobby();
-        } catch (HobbyException e) {
-            logger.error(e.getMessage());
+        HobbyMenu menu = new HobbyMenu();
+        int input;
+        while (true) {
+            input = menu.show();
+            switch (input) {
+                case 1:
+                    menu.firstItem();
+                    break;
+                case 2:
+                    menu.secondItem();
+                    break;
+                case 3:
+                    menu.thirdItem();
+                    break;
+                case 4:
+                    menu.forthItem();
+                    break;
+                case 5:
+                    menu.fifthItem();
+                    break;
+                case 6:
+                    menu.sixthItem();
+                    break;
+                case 7:
+                    menu.seventhItem();
+            }
         }
     }
 }
